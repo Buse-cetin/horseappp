@@ -1,0 +1,90 @@
+    <!DOCTYPE html>
+
+    <html lang="tr" dir="ltr">
+    <head>
+    <title>Oturum aç | Django site yöneticisi</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+    
+      <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+      <script src="/static/admin/js/nav_sidebar.js" defer></script>
+    
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+        
+    
+    <meta name="robots" content="NONE,NOARCHIVE">
+    </head>
+    
+    
+    <body class=" login"
+      data-admin-utc-offset="0">
+    
+    <!-- Container -->
+    <div id="container">
+    
+        
+        <!-- Header -->
+        <div id="header">
+            <div id="branding">
+            
+    <h1 id="site-name"><a href="index.hmtl">Hoşgeldiniz</a></h1>
+    
+            </div>
+            
+        </div>
+        <div class="main shifted" id="main">
+          
+            
+          
+          <div class="content">
+          
+            <!-- Content -->
+            <div id="content" class="colM">
+    
+    <div id="content-main">
+
+    </form>
+    <div class="row">
+        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+        <div class="col-lg-6">
+        <div class="p-5">      
+    
+{% block content %}
+
+<div class="container mt-3">
+    <div class="col">
+        <hr>
+
+        <form method="POST">
+            {% csrf_token %}
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{error}}
+                </div>
+            {% endif %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <div class="mb-3"></div>
+
+            <input type="submit" value="Login" class="btn btn-primary">
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
+    
+       
+        </body>
+        </html>
+
+    
+    
